@@ -1,0 +1,17 @@
+runtime: python37
+env: standard
+instance_class: F1
+handlers:
+  - url: .*
+    script: auto
+env_variables:
+  CLOUD_SQL_CONNECTION_NAME: 'docker-demo-384011:us-central1:poll-database'
+  CLOUD_SQL_DATABASE_NAME: postgres
+  CLOUD_SQL_PASSWORD: root
+  CLOUD_SQL_USERNAME: postgres
+automatic_scaling:
+  min_idle_instances: automatic
+  max_idle_instances: automatic
+  min_pending_latency: automatic
+  max_pending_latency: automatic
+service_account: docker-demo-384011@appspot.gserviceaccount.com
